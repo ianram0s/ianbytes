@@ -5,7 +5,7 @@ declare global {
 	namespace App {
         interface Platform {
           env: {
-            COUNTER: DurableObjectNamespace;
+            IANBYTES_DB: D1Database;
           };
           context: {
             waitUntil(promise: Promise<any>): void;

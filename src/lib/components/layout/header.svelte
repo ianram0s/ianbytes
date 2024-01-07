@@ -1,6 +1,8 @@
 <script>
 	import { page } from '$app/stores';
-	import { LightSwitcher } from '$lib/components/lightswitch';
+	import { LightSwitcher } from '$lib/components/lightswitcher';
+	import { LanguageSwitcher } from '$lib/components/langswitcher';
+	import { AuthIcon } from '$lib/components/authicon';
 </script>
 
 <header class="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
@@ -15,8 +17,10 @@
 				</li>
 			</ul>
 		</nav>
-		<div class="trail">
-			<LightSwitcher/>
+		<div class="trail flex">
+			<LanguageSwitcher />
+			<LightSwitcher />
+			<AuthIcon />
 		</div>
 
 	</div>
