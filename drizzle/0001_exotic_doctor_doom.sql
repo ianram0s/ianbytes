@@ -1,0 +1,1 @@
+ALTER TABLE user ADD `username` VARCHAR(127);

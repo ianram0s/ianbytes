@@ -1,7 +1,5 @@
 <script>
 	import { Button } from '$lib/components/ui/button';
-
-	const isLoading = true;
 </script>
 
 <svelte:head>

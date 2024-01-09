@@ -1,7 +1,10 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { User } from 'lucide-svelte';
+	import { page } from '$app/stores';
+
 </script>
 
 <DropdownMenu.Root>
@@ -10,10 +13,16 @@
 			<User
 				class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100"
 			/>
-			<span class="sr-only">Sign in</span>
+			<span class="sr-only">{$page.data.username ? 'Account' : 'Sign in'}</span>
 		</Button>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
-		<DropdownMenu.Item on:click={() => console.log('light')}>Sign in</DropdownMenu.Item>
+		{#if $page.data.username}
+			<DropdownMenu.Item on:click={() => goto('/profile')}>Profile</DropdownMenu.Item>
+			<DropdownMenu.Item on:click={() => goto('/logout')}>Logout</DropdownMenu.Item>
+		{:else}
+			<DropdownMenu.Item on:click={() => goto('/login')}>Log in</DropdownMenu.Item>
+			<DropdownMenu.Item on:click={() => goto('/signup')}>Sign up</DropdownMenu.Item>
+		{/if}
 	</DropdownMenu.Content>
 </DropdownMenu.Root>
