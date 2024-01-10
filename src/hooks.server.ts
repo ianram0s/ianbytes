@@ -1,5 +1,5 @@
 // src/hooks.server.ts
-import { initializeLucia } from "$lib/server/db/lucia";
+import { initializeLucia } from "$lib/server/auth/lucia";
 import type { Handle } from "@sveltejs/kit";
 
 export const handle: Handle = async ({ event, resolve }) => {

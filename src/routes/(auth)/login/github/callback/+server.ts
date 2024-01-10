@@ -1,4 +1,4 @@
-import { initializeGitHubProvider, initializeLucia } from '$lib/server/db/lucia.js';
+import { GitHubProvider, initAuth } from '$lib/server/auth';
 import { OAuthRequestError } from '@lucia-auth/oauth';
 
 export const GET = async ({ url, cookies, locals, platform }) => {
@@ -7,30 +7,29 @@ export const GET = async ({ url, cookies, locals, platform }) => {
 	const code = url.searchParams.get('code');
 
 	if (!storedState || !state || storedState !== state || !code) {
-		
-        return new Response(null, {
+		return new Response(null, {
 			status: 400
 		});
 	}
 
 	try {
-		const auth = initializeLucia(platform?.env?.IANBYTES_DB as D1Database);
-		const githubAuth = initializeGitHubProvider(auth);
+		const auth = initAuth(platform?.env?.IANBYTES_DB as D1Database);
+		const githubAuth = GitHubProvider(auth);
 
 		const { getExistingUser, githubUser, createUser } = await githubAuth.validateCallback(code);
 
 		const getUser = async () => {
 			const existingUser = await getExistingUser();
 
-            if (existingUser) return existingUser;
+			if (existingUser) return existingUser;
 
-            const user = await createUser({
+			const user = await createUser({
 				attributes: {
-                    username: githubUser.login
-                }
+					username: githubUser.login
+				}
 			});
-			
-            return user;
+
+			return user;
 		};
 
 		const user = await getUser();
@@ -40,26 +39,23 @@ export const GET = async ({ url, cookies, locals, platform }) => {
 			attributes: {}
 		});
 
-        locals.auth.setSession(session)
-		
+		locals.auth.setSession(session);
+
 		return new Response(null, {
 			status: 302,
 			headers: {
 				Location: '/'
 			}
 		});
-
-    } catch (e) {
-		
-        if (e instanceof OAuthRequestError) {
-			
-            return new Response(null, {
+	} catch (e) {
+		if (e instanceof OAuthRequestError) {
+			return new Response(null, {
 				status: 400
 			});
 		}
-		
-        return new Response(null, {
-			status: 500,
+
+		return new Response(null, {
+			status: 500
 		});
 	}
 };

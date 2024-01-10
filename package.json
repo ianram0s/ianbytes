@@ -9,8 +9,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"pages:dev": "wrangler pages dev --compatibility-date=2023-12-18 --proxy 5173 -- npm run dev",
-		"pages:deploy": "npm run build && wrangler pages deploy .svelte-kit/cloudflare",
+		"pages:dev": "wrangler pages dev --compatibility-date=2023-12-18 --proxy 5173 -- yarn dev",
+		"pages:deploy": "yarn build && wrangler pages deploy .svelte-kit/cloudflare",
 		"generate": "drizzle-kit generate:sqlite --schema=./src/lib/server/db/schema.ts"
 	},
 	"devDependencies": {

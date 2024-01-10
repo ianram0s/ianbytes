@@ -1,9 +1,9 @@
 import { dev } from "$app/environment";
-import { initializeGitHubProvider, initializeLucia } from "$lib/server/db/lucia.js";
+import { initAuth, GitHubProvider } from "$lib/server/auth";
 
 export const GET = async ({ cookies, platform }) => {
-	const auth = initializeLucia(platform?.env.IANBYTES_DB as D1Database);
-	const githubAuth = initializeGitHubProvider(auth);
+	const auth = initAuth(platform?.env.IANBYTES_DB as D1Database);
+	const githubAuth = GitHubProvider(auth);
 
 	const [url, state] = await githubAuth.getAuthorizationUrl();
 

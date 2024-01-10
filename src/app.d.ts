@@ -17,7 +17,7 @@ declare global {
 		}
 	}
 	declare namespace Lucia {
-		type Auth = import('./lib/server/db/lucia').Auth;
+		type Auth = import('./lib/server/auth/lucia').Auth;
 		type DatabaseUserAttributes = {
 			username: string;
 		};
