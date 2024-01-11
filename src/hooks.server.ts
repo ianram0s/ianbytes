@@ -1,14 +1,16 @@
-// src/hooks.server.ts
-import { initializeLucia } from "$lib/server/auth/lucia";
-import type { Handle } from "@sveltejs/kit";
+import { initAuth } from "$lib/server/auth";
+import { type Handle } from "@sveltejs/kit";
 
 export const handle: Handle = async ({ event, resolve }) => {
 
-	// event.platform and env does not exist on dev
-	// TODO: configure wrangler properly to use dev environment
+	// Platform doesn't exist on normal dev environment. Must use yarn pages:dev to proxy through wrangler
 	if(event.platform && event.platform.env) {
-		const auth = initializeLucia(event.platform.env!.IANBYTES_DB);
+		const auth = initAuth(event.platform.env!.IANBYTES_DB);
 		event.locals.auth = auth.handleRequest(event);
+	} else {
+		return new Response(null, {
+			status: 500
+		})
 	}
 
 	return await resolve(event);

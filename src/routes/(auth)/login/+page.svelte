@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+	import { LoginForm } from "$lib/forms";
 	import type { PageData } from "./$types";
-	import UserAuthForm from "./UserAuthForm.svelte"
 
 	export let data: PageData;
 </script>
@@ -48,7 +47,7 @@
 				</p>
 			</div>
 			
-			<UserAuthForm form={data.form} />
+			<LoginForm form={data.form} />
 		</div>
 	</div>
 </div>

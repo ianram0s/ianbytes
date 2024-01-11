@@ -8,7 +8,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 	if (!session) redirect(302, "/login");
 	
     return {
-		userId: session.user.userId,
-		username: session.user.username
+		user: session?.user
 	};
 }

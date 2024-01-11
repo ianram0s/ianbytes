@@ -4,7 +4,8 @@
 	import * as Form from '$lib/components/ui/form';
 	import { cn } from '$lib/utils';
 	import type { SuperValidated } from 'sveltekit-superforms';
-	import { authForm, type AuthFormSchema } from '../zod';
+	import { goto } from '$app/navigation';
+	import { loginFormSchema, type LoginFormSchema } from '$lib/forms';
 
 	let className: string | undefined | null = undefined;
 	export { className as class };
@@ -17,17 +18,14 @@
 	async function onSubmit(provider: Provider) {
 		isLoading = true;
 		isLoadingProvider = provider;
-
-		setTimeout(() => {
-			isLoading = false;
-			isLoadingProvider = false;
-		}, 1000);
+		
+		goto('/login/github')
 	}
-	export let form: SuperValidated<AuthFormSchema>;
+	export let form: SuperValidated<LoginFormSchema>;
 </script>
 
 <div class={cn('grid gap-6', className)} {...$$restProps}>
-	<Form.Root method="POST" {form} schema={authForm} let:config>
+	<Form.Root method="POST" {form} schema={loginFormSchema} let:config>
 		<Form.Field {config} name="email">
 			<Form.Item>
 				<Form.Label>E-mail</Form.Label>

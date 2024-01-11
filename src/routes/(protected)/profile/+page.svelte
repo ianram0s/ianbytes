@@ -1,18 +1,16 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
 	import { Button } from "$lib/components/ui/button";
-
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
 </script>
 
 <h1>Profile</h1>
-<p>User: @{data.username}</p>
+<p>User: @{data.user.username}</p>
 
 
-<form method="post" action="?/logout" use:enhance>
-	<Button type='submit'>
+<a class="m-2" href="./logout">
+	<Button variant='outline'>
 		Sign out
 	</Button>
-</form>
+</a>

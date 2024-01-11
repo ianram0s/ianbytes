@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 /// <reference types="lucia" />
+
 declare global {
 	namespace App {
 		interface Platform {
@@ -14,6 +15,7 @@ declare global {
 		}
 		interface Locals {
 			auth: import("lucia").AuthRequest;
+			user: User;
 		}
 	}
 	declare namespace Lucia {
