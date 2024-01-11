@@ -13,11 +13,11 @@
 			<User
 				class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100"
 			/>
-			<span class="sr-only">{$page.data.username ? 'Account' : 'Sign in'}</span>
+			<span class="sr-only">{$page.data.user ? 'Account' : 'Sign in'}</span>
 		</Button>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
-		{#if $page.data.username}
+		{#if $page.data.user}
 			<DropdownMenu.Item on:click={() => goto('/profile')}>Profile</DropdownMenu.Item>
 			<DropdownMenu.Item on:click={() => goto('/logout')}>Logout</DropdownMenu.Item>
 		{:else}

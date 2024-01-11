@@ -7,10 +7,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if(event.platform && event.platform.env) {
 		const auth = initAuth(event.platform.env!.IANBYTES_DB);
 		event.locals.auth = auth.handleRequest(event);
-	} else {
-		return new Response(null, {
-			status: 500
-		})
 	}
 
 	return await resolve(event);
