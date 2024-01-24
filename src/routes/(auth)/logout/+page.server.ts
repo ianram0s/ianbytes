@@ -11,6 +11,7 @@ export const load: PageServerLoad = async ({ locals, platform }) => {
         const auth = initAuth(platform?.env.IANBYTES_DB as D1Database);
         await auth.invalidateSession(session.sessionId);
         locals.auth.setSession(null);
+        locals.user = null;
     }
     
     redirect(302, "/login");

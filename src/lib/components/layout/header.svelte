@@ -18,9 +18,9 @@
 			</ul>
 		</nav>
 		<div class="trail flex">
-			<LanguageSwitcher />
+			
 			<LightSwitcher />
-			<AuthIcon />
+			<AuthIcon loggedIn={$page.data.user !== undefined} />
 		</div>
 
 	</div>

@@ -3,8 +3,8 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { User } from 'lucide-svelte';
-	import { page } from '$app/stores';
 
+	export let loggedIn = false;
 </script>
 
 <DropdownMenu.Root>
@@ -13,11 +13,11 @@
 			<User
 				class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100"
 			/>
-			<span class="sr-only">{$page.data.user ? 'Account' : 'Sign in'}</span>
+			<span class="sr-only">{loggedIn ? 'Account' : 'Sign in'}</span>
 		</Button>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
-		{#if $page.data.user}
+		{#if loggedIn}
 			<DropdownMenu.Item on:click={() => goto('/profile')}>Profile</DropdownMenu.Item>
 			<DropdownMenu.Item on:click={() => goto('/logout')}>Logout</DropdownMenu.Item>
 		{:else}

@@ -8,7 +8,7 @@
 <div class="flex flex-col items-center justify-center min-h-screen min-w-full bg-secondary dark:bg-primary-foreground">
 	<Header />
 
-	<main class="items-center flex flex-col p-1 w-full max-w-[64rem] mx-0 my-auto">
+	<main class="items-center flex flex-col p-1 w-full max-w-screen-md mx-0 my-auto">
 		<slot />
 	</main>
 

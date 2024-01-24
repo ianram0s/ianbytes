@@ -6,7 +6,7 @@ export const load: LayoutServerLoad = async ( { locals } ) => {
         const session = await locals.auth.validate();
         
         return {
-            user: session ? session.user : null
+            user: session ? session.user : undefined
         };
     }
 };

@@ -23,7 +23,9 @@ import {
 	SunMedium,
 	Trash,
 	User,
-	X
+	X,
+	MessageCircle,
+	Heart
 } from "lucide-svelte";
 
 export type Icon = LucideIcon;
@@ -52,5 +54,7 @@ export const Icons = {
 	sun: SunMedium,
 	moon: Moon,
 	laptop: Laptop,
-    github: Github
+    github: Github,
+	comment: MessageCircle,
+	heart: Heart
 };
