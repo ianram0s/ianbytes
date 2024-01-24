@@ -7,7 +7,10 @@
 	
 </script>
 <div class="flex flex-col gap-4 rounded-xl">
-	<FeedItem article={firstArticle} showCoverImage />
+	{#if firstArticle}
+		<FeedItem article={firstArticle} showCoverImage />
+	{/if}
+
 
 	{#each articles as article, index}
 		{#if index !== 0}

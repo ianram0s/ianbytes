@@ -22,7 +22,8 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 
         const response = await fetch(apiUrl, {
             headers: {
-                'api-key': DEVTO_API_KEY
+                'api-key': DEVTO_API_KEY,
+                'User-Agent': 'Mozilla/5.0 '
             },
         });
 

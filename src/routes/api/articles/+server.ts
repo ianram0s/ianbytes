@@ -28,7 +28,8 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 
         const response = await fetch(apiUrl, {
             headers: {
-                'api-key': DEVTO_API_KEY
+                'api-key': DEVTO_API_KEY,
+                'User-Agent': 'Mozilla/5.0 '
             },
         });
 
@@ -48,6 +49,6 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
     
     } catch (e) {
         
-        return error(500, 'Internal Server Error');
+        return error(500, `Internal Server Error.`);
     }
 };
