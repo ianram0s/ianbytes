@@ -7,7 +7,7 @@
 </svelte:head>
 
 
-<div class="flex w-full justify-between items-center py-4 px-2">
+<div class="flex max-w-screen-md w-full justify-between items-center py-4 px-2">
     <div class="text-xl flex gap-4">
         <a href="/articles/top" class="hover:underline transition-all {$page.url.pathname.includes('articles/top') ||  $page.url.pathname == '/' ? 'text-primary font-bold' : 'text-primary'}">
             Top

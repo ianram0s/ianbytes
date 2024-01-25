@@ -8,7 +8,7 @@
 
 <div class="w-full max-w-screen-md rounded-xl bg-background">
 	{#if showCoverImage && article.cover_image}
-		<div class="flex w-full max-w-[760px] items-center justify-center">
+		<div class="flex w-full items-center justify-center">
 			<img
 				src={article.cover_image}
 				alt="Article's cover"
