@@ -9,8 +9,8 @@
 <p>User: @{data.user.username}</p>
 
 
-<a class="m-2" href="./logout">
-	<Button variant='outline'>
+<form method="POST" action="/logout">
+	<Button type="submit" variant='outline'>
 		Sign out
 	</Button>
-</a>
+</form>

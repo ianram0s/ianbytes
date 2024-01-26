@@ -2,11 +2,9 @@ import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = async ( { locals } ) => {
 
-    if (locals.auth) {
-        const session = await locals.auth.validate();
-        
-        return {
-            user: session ? session.user : undefined
-        };
-    }
+    const session = locals.auth ? await locals.auth.validate() : undefined;
+
+    return {
+        user: session ? session.user : undefined
+    };
 };

@@ -19,7 +19,13 @@
 	<DropdownMenu.Content align="end">
 		{#if loggedIn}
 			<DropdownMenu.Item on:click={() => goto('/profile')}>Profile</DropdownMenu.Item>
-			<DropdownMenu.Item on:click={() => goto('/logout')}>Logout</DropdownMenu.Item>
+			<DropdownMenu.Item>
+				<form method="POST" action="/logout">
+					<button type="submit">
+						Logout
+					</button>
+				</form>
+			</DropdownMenu.Item>
 		{:else}
 			<DropdownMenu.Item on:click={() => goto('/login')}>Log in</DropdownMenu.Item>
 			<DropdownMenu.Item on:click={() => goto('/signup')}>Sign up</DropdownMenu.Item>
