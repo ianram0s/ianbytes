@@ -54,9 +54,12 @@
 				</span>
 			</div>
 			<div class="flex items-center justify-center">
-				<span class="flex items-center justify-center gap-2">
-					<Icons.chevronRight />
-				</span>
+				<a href={`https://dev.to/articles/${article.slug}`}>
+					<span class="flex items-center justify-center gap-2">
+						<Icons.chevronRight />
+					</span>
+				</a>
+
 			</div>
 		</div>
 	</div>
