@@ -54,7 +54,7 @@
 				</span>
 			</div>
 			<div class="flex items-center justify-center">
-				<a href={`https://dev.to/articles/${article.slug}`}>
+				<a href={`/articles${article.path}`}>
 					<span class="flex items-center justify-center gap-2">
 						<Icons.chevronRight />
 					</span>

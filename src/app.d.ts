@@ -30,9 +30,12 @@ declare global {
 	}
 
 	type Article = {
+		id: number;
 		title: string;
+		body_html: string;
 		description: string;
 		slug: string;
+		path: string;
 		cover_image: string;
 		readable_publish_date: string;
 		published_at: string;
@@ -40,6 +43,7 @@ declare global {
 		comments_count: number;
 		positive_reactions_count: number;
 		tag_list: string[];
+		reading_time_minutes: number;
 		user: {
 			name: string;
 			username: string;
