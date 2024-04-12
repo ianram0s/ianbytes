@@ -11,4 +11,5 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .wrangler
+.vscode
 pnpm-lock.yaml
