@@ -1,6 +1,3 @@
-import Root from "./lightswitcher.svelte";
+import Root from './lightswitcher.svelte';
 
-export {
-	Root,
-	Root as LightSwitcher
-};
+export { Root, Root as LightSwitcher };

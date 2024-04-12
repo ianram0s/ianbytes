@@ -10,9 +10,7 @@
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger asChild let:builder>
 		<Button builders={[builder]} variant="ghost" size="icon">
-			<User
-				class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100"
-			/>
+			<User class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100" />
 			<span class="sr-only">{loggedIn ? 'Account' : 'Sign in'}</span>
 		</Button>
 	</DropdownMenu.Trigger>
@@ -21,9 +19,7 @@
 			<DropdownMenu.Item on:click={() => goto('/profile')}>Profile</DropdownMenu.Item>
 			<DropdownMenu.Item>
 				<form method="POST" action="/logout">
-					<button type="submit">
-						Logout
-					</button>
+					<button type="submit"> Logout </button>
 				</form>
 			</DropdownMenu.Item>
 		{:else}

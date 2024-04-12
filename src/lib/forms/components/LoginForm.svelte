@@ -18,8 +18,8 @@
 	async function onSubmit(provider: Provider) {
 		isLoading = true;
 		isLoadingProvider = provider;
-		
-		goto('/login/github')
+
+		goto('/login/github');
 	}
 	export let form: SuperValidated<LoginFormSchema>;
 </script>
@@ -36,15 +36,11 @@
 		<Form.Field {config} name="password">
 			<Form.Item>
 				<Form.Label>Password</Form.Label>
-				<Form.Input type="password"/>
+				<Form.Input type="password" />
 				<Form.Validation class="pb-2" />
 			</Form.Item>
 		</Form.Field>
-		<Form.Button
-			class="w-full mt-2"
-			type="submit"
-			disabled={isLoading}
-		>
+		<Form.Button class="mt-2 w-full" type="submit" disabled={isLoading}>
 			{#if isLoading && isLoadingProvider == 'Email'}
 				<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
 			{:else}

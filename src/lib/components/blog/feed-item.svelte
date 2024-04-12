@@ -35,7 +35,7 @@
 
 		<div class="mt-3 flex gap-2">
 			{#each article.tag_list as tag}
-				<a class="opacity-70 group" href="/articles?tag={tag}">
+				<a class="group opacity-70" href="/articles?tag={tag}">
 					<Badge class="group-hover:bg-secondary/80" variant="outline">
 						#{tag}
 					</Badge>
@@ -59,7 +59,6 @@
 						<Icons.chevronRight />
 					</span>
 				</a>
-
 			</div>
 		</div>
 	</div>

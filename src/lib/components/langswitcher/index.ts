@@ -1,6 +1,3 @@
-import Root from "./langswitch.svelte";
+import Root from './langswitch.svelte';
 
-export {
-	Root,
-	Root as LanguageSwitcher
-};
+export { Root, Root as LanguageSwitcher };

@@ -21,7 +21,7 @@ export const initializeLucia = (db: D1Database) => {
 		}
 	});
 
-	return auth
+	return auth;
 };
 
 export type Auth = ReturnType<typeof initializeLucia>;

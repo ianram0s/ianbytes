@@ -9,4 +9,4 @@ export const GitHubProvider = (auth: Auth) => {
 	});
 
 	return githubAuth;
-}
+};

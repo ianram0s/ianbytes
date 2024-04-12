@@ -1,7 +1,5 @@
-import LoginForm from './components/LoginForm.svelte'
+import LoginForm from './components/LoginForm.svelte';
 
-export * from './schemas/loginForm'
+export * from './schemas/loginForm';
 
-export {
-    LoginForm
-}
+export { LoginForm };

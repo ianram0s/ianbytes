@@ -5,24 +5,23 @@
 	import { AuthIcon } from '$lib/components/authicon';
 </script>
 
-<header class="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
-	<div class="container flex justify-between h-14 items-center">
+<header
+	class="sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+	<div class="container flex h-14 items-center justify-between">
 		<nav class="leading">
-			<ul class="w-full flex gap-6">
+			<ul class="flex w-full gap-6">
 				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-					<a class="transition-colors hover:text-foreground/80 text-foreground/60 font-semibold" href="/">Home</a>
+					<a class="font-semibold text-foreground/60 transition-colors hover:text-foreground/80" href="/">Home</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-					<a class="transition-colors hover:text-foreground/80 text-foreground/60 font-semibold" href="/about">About</a>
+					<a class="font-semibold text-foreground/60 transition-colors hover:text-foreground/80" href="/about">About</a>
 				</li>
 			</ul>
 		</nav>
 		<div class="trail flex">
-
 			<LightSwitcher />
 			<AuthIcon loggedIn={$page.data.user !== undefined} />
 		</div>
-
 	</div>
-
 </header>

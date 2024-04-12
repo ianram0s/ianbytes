@@ -1,5 +1,5 @@
-import type { Icon as LucideIcon } from "lucide-svelte";
-import Github from "./github.svelte"
+import type { Icon as LucideIcon } from 'lucide-svelte';
+import Github from './github.svelte';
 import {
 	AlertTriangle,
 	ArrowRight,
@@ -26,7 +26,7 @@ import {
 	X,
 	MessageCircle,
 	Heart
-} from "lucide-svelte";
+} from 'lucide-svelte';
 
 export type Icon = LucideIcon;
 
@@ -54,7 +54,7 @@ export const Icons = {
 	sun: SunMedium,
 	moon: Moon,
 	laptop: Laptop,
-    github: Github,
+	github: Github,
 	comment: MessageCircle,
 	heart: Heart
 };

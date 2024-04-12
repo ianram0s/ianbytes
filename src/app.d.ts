@@ -14,12 +14,10 @@ declare global {
 			caches: CacheStorage & { default: Cache };
 		}
 		interface Locals {
-			auth: import("lucia").AuthRequest;
+			auth: import('lucia').AuthRequest;
 			user: User;
 		}
-		type Article = {
-			
-		}
+		type Article = {};
 	}
 	declare namespace Lucia {
 		type Auth = import('./lib/server/auth/lucia').Auth;
@@ -48,8 +46,8 @@ declare global {
 			name: string;
 			username: string;
 			profile_image: string;
-		}
-	}
+		};
+	};
 }
 
 export {};
